@@ -18,16 +18,22 @@ class ViewController: UIViewController {
     
     @IBAction func btnSubmit(_ sender: UIButton) {
         
+        var taskdata: String = ""
+        
+        if let td = txtTask.text {
+            taskdata = td
+        }
+        
         //Add a document to the collection named "cities"
-        db.collection("cities").document("LA").setData([
-            "name": "Los Angeles",
-            "state": "CA",
-            "country": "USA"
+        var ref: DocumentReference? = nil
+        
+        ref = db.collection("tasks").addDocument(data: [
+            "details": taskdata
         ]) { err in
             if let err = err{
                 print("Error writing document: \(err)")
             } else {
-                print("Document successfully written!")
+                print("Document added with ID: \(ref!.documentID)")
             }
         }
     }
