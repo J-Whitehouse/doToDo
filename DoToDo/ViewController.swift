@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         var ref: DocumentReference? = nil
         
         ref = db.collection("tasks").addDocument(data: [
-            "details": taskdata
+            "taskdata": taskdata
         ]) { err in
             if let err = err{
                 print("Error writing document: \(err)")
@@ -36,6 +36,10 @@ class ViewController: UIViewController {
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
+        
+        //Dismiss the view controller
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
