@@ -10,6 +10,8 @@ import Firebase
 
 struct appTask {
     let taskdata: String?
+    let duedate: Date?
+    let completed: Bool?
 }
 
 extension appTask {
@@ -18,7 +20,7 @@ extension appTask {
         var tasks = [appTask]()
         
         for document in documents {
-            tasks.append(appTask(taskdata: document["taskdata"] as? String ?? ""))
+            tasks.append(appTask(taskdata: document["taskdata"] as? String ?? "", duedate: document[""] as? Date ?? "",completed: document[""] as? Bool ?? ""))
         }
         
         return tasks

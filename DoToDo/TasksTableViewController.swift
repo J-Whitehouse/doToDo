@@ -61,6 +61,7 @@ class TasksTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         
         cell.textLabel?.text = tasks[indexPath.row].taskdata
+        cell.detailTextLabel?.text = tasks[indexPath.row].String(duedate)
     
         return cell
     }
