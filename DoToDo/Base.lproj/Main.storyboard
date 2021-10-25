@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="TMf-xm-Vae" kind="show" id="XnM-DA-Znb"/>
+                                    <segue destination="TMf-xm-Vae" kind="show" identifier="taskDetailSegue" id="XnM-DA-Znb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,16 +70,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x29-EM-l1j">
-                                <rect key="frame" x="35" y="131" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x29-EM-l1j">
+                                <rect key="frame" x="20" y="108" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81H-Jj-TKf">
-                                <rect key="frame" x="35" y="206" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81H-Jj-TKf">
+                                <rect key="frame" x="20" y="209" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,11 +85,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Gt-rm-Qin"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x29-EM-l1j" firstAttribute="top" secondItem="6Gt-rm-Qin" secondAttribute="top" constant="20" id="4mF-IT-uyh"/>
+                            <constraint firstItem="6Gt-rm-Qin" firstAttribute="trailing" secondItem="81H-Jj-TKf" secondAttribute="trailing" constant="20" id="8ty-FK-Ha0"/>
+                            <constraint firstItem="x29-EM-l1j" firstAttribute="leading" secondItem="6Gt-rm-Qin" secondAttribute="leading" constant="20" id="Ms9-qP-rGT"/>
+                            <constraint firstItem="81H-Jj-TKf" firstAttribute="leading" secondItem="6Gt-rm-Qin" secondAttribute="leading" constant="20" id="hEK-pU-wpo"/>
+                            <constraint firstItem="81H-Jj-TKf" firstAttribute="top" secondItem="x29-EM-l1j" secondAttribute="bottom" constant="80" id="oxU-8a-Wme"/>
+                            <constraint firstItem="6Gt-rm-Qin" firstAttribute="trailing" secondItem="x29-EM-l1j" secondAttribute="trailing" constant="20" id="uVH-kN-NYe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FOQ-Vb-KUT"/>
                     <connections>
-                        <outlet property="data" destination="x29-EM-l1j" id="mES-Z8-4Oe"/>
-                        <outlet property="dueDate" destination="81H-Jj-TKf" id="W2R-hR-xYa"/>
+                        <outlet property="data" destination="x29-EM-l1j" id="mOI-Zy-W1w"/>
+                        <outlet property="dueDate" destination="81H-Jj-TKf" id="lo2-ok-z0Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLh-xU-gGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -112,10 +118,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="j8e-jM-Nbb">
-                                <rect key="frame" x="20" y="176" width="374" height="140"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVX-7a-GXl">
                                 <rect key="frame" x="20" y="324" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -124,13 +126,17 @@
                                     <action selector="btnSubmit:" destination="XeY-iv-nUi" eventType="touchUpInside" id="4sF-JX-Giq"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="j8e-jM-Nbb" customClass="due">
+                                <rect key="frame" x="20" y="176" width="374" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="huD-kR-T82"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="lnq-Qd-c3x"/>
                     <connections>
-                        <outlet property="duedate" destination="j8e-jM-Nbb" id="ue3-w9-7Uh"/>
+                        <outlet property="pickerDuedate" destination="j8e-jM-Nbb" id="rCc-qR-Y2q"/>
                         <outlet property="txtTask" destination="Hi8-8g-5d7" id="TZd-Mk-GSM"/>
                     </connections>
                 </viewController>

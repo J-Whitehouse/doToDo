@@ -60,9 +60,34 @@ class TasksTableViewController: UITableViewController {
         //Create an instance if tge UITableViewCell with default appearance
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        var duedate: Date?
+        duedate = tasks[indexPath.row].duedate
+        
         cell.textLabel?.text = tasks[indexPath.row].taskdata
-        cell.detailTextLabel?.text = tasks[indexPath.row].String(duedate)
+        
+        if (duedate != nil) {
+            cell.detailTextLabel?.text = dateFormatter.string(from: duedate as! Date)
+        }
     
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "taskDetailSegue" {
+            
+            let detailView = segue.destination as! TaskDetailViewController
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let taskID = tasks[indexPath.row].taskID!
+                
+                //Set the task ID on the destination view controller
+                
+                detailView.taskID = taskID
+            }
+        }
     }
 }

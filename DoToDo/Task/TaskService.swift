@@ -24,4 +24,14 @@ class TaskService {
         }
         
     }
+    
+    func getOne(collectionID: String, taskID: String, handler: @escaping (appTask) -> Void) {
+        database.collection(collectionID).document(taskID).addSnapshotListener { documentSnapshot, err in
+            if let error = err {
+                print(error)
+            } else {
+                handler(appTask.buildOne(from: documentSnapshot!))
+            }
+        }
+    }
 }

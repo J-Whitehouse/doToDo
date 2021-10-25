@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     //MARK: IBOutlets and Actions
     @IBOutlet var txtTask: UITextField!
-    @IBOutlet var duedate: UIDatePicker!
+    @IBOutlet var pickerDuedate: UIDatePicker!
     
     @IBAction func btnSubmit(_ sender: UIButton) {
         
@@ -25,19 +25,14 @@ class ViewController: UIViewController {
             taskdata = td
         }
         
-        var date: Date = Date()
-        
-        if let dt = duedate.date {
-            date = dt
-        }
         
         //Add a document to the collection named "cities"
         var ref: DocumentReference? = nil
         
         ref = db.collection("tasks").addDocument(data: [
             "taskdata": taskdata,
-            "duedate": date,
-            "completed": "false"
+            "duedate": pickerDuedate.date,
+            "completed": false
         ]) { err in
             if let err = err{
                 print("Error writing document: \(err)")
