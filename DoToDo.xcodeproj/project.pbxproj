@@ -17,6 +17,7 @@
 		301C3AB9271E15550088C1D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 301C3AB8271E15550088C1D5 /* GoogleService-Info.plist */; };
 		301C3AEB271E1F100088C1D5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 301C3AEA271E1F100088C1D5 /* FirebaseAuth */; };
 		301C3AED271E1F100088C1D5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 301C3AEC271E1F100088C1D5 /* FirebaseFirestore */; };
+		302DD8F527273CFD00046544 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302DD8F427273CFD00046544 /* TaskDetailViewController.swift */; };
 		3061BA4C2720B7060060D044 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061BA4B2720B7060060D044 /* Task.swift */; };
 		3061BA4F2720B9DE0060D044 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061BA4E2720B9DE0060D044 /* TaskService.swift */; };
 		3061BA522720BC230060D044 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061BA512720BC230060D044 /* TasksTableViewController.swift */; };
@@ -33,6 +34,7 @@
 		301C3AAD271E127D0088C1D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301C3AAF271E127D0088C1D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301C3AB8271E15550088C1D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		302DD8F427273CFD00046544 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		3061BA4B2720B7060060D044 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3061BA4E2720B9DE0060D044 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 		3061BA512720BC230060D044 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		3061BA4A2720B6E60060D044 /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				302DD8F427273CFD00046544 /* TaskDetailViewController.swift */,
 				3061BA4B2720B7060060D044 /* Task.swift */,
 				3061BA4E2720B9DE0060D044 /* TaskService.swift */,
 			);
@@ -175,6 +178,7 @@
 				301C3AA9271E126F0088C1D5 /* DoToDo.xcdatamodeld in Sources */,
 				301C3AA3271E126F0088C1D5 /* ViewController.swift in Sources */,
 				3061BA4F2720B9DE0060D044 /* TaskService.swift in Sources */,
+				302DD8F527273CFD00046544 /* TaskDetailViewController.swift in Sources */,
 				3061BA4C2720B7060060D044 /* Task.swift in Sources */,
 				301C3A9F271E126F0088C1D5 /* AppDelegate.swift in Sources */,
 				3061BA522720BC230060D044 /* TasksTableViewController.swift in Sources */,
