@@ -82,6 +82,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nUn-6l-EAr">
+                                <rect key="frame" x="20" y="293" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchOnValueChanged:" destination="TMf-xm-Vae" eventType="valueChanged" id="S4T-LE-UZX"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-go-pTU">
+                                <rect key="frame" x="20" y="264" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Gt-rm-Qin"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -98,11 +112,12 @@
                     <connections>
                         <outlet property="data" destination="x29-EM-l1j" id="mOI-Zy-W1w"/>
                         <outlet property="dueDate" destination="81H-Jj-TKf" id="lo2-ok-z0Z"/>
+                        <outlet property="switchCompleted" destination="nUn-6l-EAr" id="dhQ-SH-Fxk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLh-xU-gGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="856"/>
+            <point key="canvasLocation" x="961" y="876"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sAz-ek-asZ">

@@ -19,8 +19,18 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet var data: UILabel!
     @IBOutlet var dueDate: UILabel!
+    @IBOutlet var switchCompleted: UISwitch!
     
-    //MARK: Custom MEthods
+    @IBAction func switchOnValueChanged(_ sender: Any) {
+        
+        if switchCompleted.isOn {
+            print("The switch is on; the task is completed")
+        } else{
+            print("The switch is off; the task is NOT completed")
+        }
+    }
+    
+    //MARK: Custom Methods
     func loadData() {
         
         service = TaskService()
@@ -33,6 +43,12 @@ class TaskDetailViewController: UIViewController {
             dateFormatter.timeStyle = .none
             
             self.dueDate.text = dateFormatter.string(from: self.task?.duedate as! Date )
+            
+            if self.task?.completed == false {
+                self.switchCompleted.setOn(false, animated: false)
+            } else {
+                self.switchCompleted.setOn(true, animated: false)
+            }
         }
         
     }
