@@ -8,6 +8,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="8N1-Yg-wNg">
+            <objects>
+                <viewController id="575-ot-KCY" customClass="SignInViewController" customModule="DoToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oP0-NT-EhL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7om-iS-Ucj" customClass="GIDSignInButton">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <action selector="signIn:" destination="575-ot-KCY" eventType="touchUpInside" id="NPu-yL-fgR"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fd2-q1-GN3">
+                                <rect key="frame" x="177" y="618" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="singOut:" destination="575-ot-KCY" eventType="touchUpInside" id="EjP-GA-3qV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wiB-xm-8hM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nil-E9-wJO"/>
+                    <connections>
+                        <outlet property="signInButton" destination="7om-iS-Ucj" id="Tot-5D-vZp"/>
+                        <segue destination="RnL-il-Qx3" kind="show" identifier="showTasks" id="zwC-jW-69w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbI-FN-WZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151" y="128"/>
+        </scene>
         <!--Tasks Table View Controller-->
         <scene sceneID="5Pp-Hs-r5j">
             <objects>
@@ -170,12 +208,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RnL-il-Qx3" kind="relationship" relationship="rootViewController" id="hkH-kb-tqb"/>
+                        <segue destination="575-ot-KCY" kind="relationship" relationship="rootViewController" id="Gfq-p8-6Ky"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzT-yr-wTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.724637681159422" y="127.90178571428571"/>
+            <point key="canvasLocation" x="-694" y="128"/>
         </scene>
     </scenes>
     <resources>

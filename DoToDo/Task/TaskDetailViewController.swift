@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class TaskDetailViewController: UIViewController {
     
@@ -51,7 +52,13 @@ class TaskDetailViewController: UIViewController {
     // MARK: Custom methods
     func loadData() {
         service = TaskService()
-        service?.getOne(collectionID: "tasks", taskID: taskID) { task in
+        
+        var collection = ""
+        if let user = GIDSignIn.sharedInstance.currentUser {
+            collection = user.userID!
+        }
+        
+        service?.getOne(collectionID: collection, taskID: taskID) { task in
             self.task = task
             self.lblTaskData.text = self.task?.taskdata
             

@@ -18,6 +18,8 @@
 		301C3AEB271E1F100088C1D5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 301C3AEA271E1F100088C1D5 /* FirebaseAuth */; };
 		301C3AED271E1F100088C1D5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 301C3AEC271E1F100088C1D5 /* FirebaseFirestore */; };
 		302DD8F527273CFD00046544 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302DD8F427273CFD00046544 /* TaskDetailViewController.swift */; };
+		30450B322730887900C41FC7 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 30450B312730887900C41FC7 /* GoogleSignIn */; };
+		30450B3727308C1E00C41FC7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30450B3627308C1E00C41FC7 /* SignInViewController.swift */; };
 		3061BA4C2720B7060060D044 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061BA4B2720B7060060D044 /* Task.swift */; };
 		3061BA4F2720B9DE0060D044 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061BA4E2720B9DE0060D044 /* TaskService.swift */; };
 		3061BA522720BC230060D044 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061BA512720BC230060D044 /* TasksTableViewController.swift */; };
@@ -35,6 +37,7 @@
 		301C3AAF271E127D0088C1D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301C3AB8271E15550088C1D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		302DD8F427273CFD00046544 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		30450B3627308C1E00C41FC7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3061BA4B2720B7060060D044 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3061BA4E2720B9DE0060D044 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 		3061BA512720BC230060D044 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 			files = (
 				301C3AEB271E1F100088C1D5 /* FirebaseAuth in Frameworks */,
 				301C3AED271E1F100088C1D5 /* FirebaseFirestore in Frameworks */,
+				30450B322730887900C41FC7 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,7 @@
 				301C3AA0271E126F0088C1D5 /* SceneDelegate.swift */,
 				301C3AA2271E126F0088C1D5 /* ViewController.swift */,
 				301C3AA4271E126F0088C1D5 /* Main.storyboard */,
+				30450B3627308C1E00C41FC7 /* SignInViewController.swift */,
 				301C3AAA271E127D0088C1D5 /* Assets.xcassets */,
 				301C3AAC271E127D0088C1D5 /* LaunchScreen.storyboard */,
 				301C3AAF271E127D0088C1D5 /* Info.plist */,
@@ -116,6 +121,7 @@
 			packageProductDependencies = (
 				301C3AEA271E1F100088C1D5 /* FirebaseAuth */,
 				301C3AEC271E1F100088C1D5 /* FirebaseFirestore */,
+				30450B312730887900C41FC7 /* GoogleSignIn */,
 			);
 			productName = DoToDo;
 			productReference = 301C3A9B271E126F0088C1D5 /* DoToDo.app */;
@@ -146,6 +152,7 @@
 			mainGroup = 301C3A92271E126F0088C1D5;
 			packageReferences = (
 				301C3AE9271E1F100088C1D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				30450B302730887900C41FC7 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 301C3A9C271E126F0088C1D5 /* Products */;
 			projectDirPath = "";
@@ -180,6 +187,7 @@
 				3061BA4F2720B9DE0060D044 /* TaskService.swift in Sources */,
 				302DD8F527273CFD00046544 /* TaskDetailViewController.swift in Sources */,
 				3061BA4C2720B7060060D044 /* Task.swift in Sources */,
+				30450B3727308C1E00C41FC7 /* SignInViewController.swift in Sources */,
 				301C3A9F271E126F0088C1D5 /* AppDelegate.swift in Sources */,
 				3061BA522720BC230060D044 /* TasksTableViewController.swift in Sources */,
 				301C3AA1271E126F0088C1D5 /* SceneDelegate.swift in Sources */,
@@ -392,6 +400,14 @@
 				minimumVersion = 8.8.1;
 			};
 		};
+		30450B302730887900C41FC7 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -404,6 +420,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 301C3AE9271E1F100088C1D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		30450B312730887900C41FC7 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30450B302730887900C41FC7 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 

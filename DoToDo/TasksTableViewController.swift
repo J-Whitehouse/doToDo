@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class TasksTableViewController: UITableViewController {
     
@@ -33,7 +34,11 @@ class TasksTableViewController: UITableViewController {
     
     func loadData() {
         service = TaskService()
-        service?.get(collectionID: "tasks") {
+        var collection = ""
+        if let user = GIDSignIn.sharedInstance.currentUser {
+            collection = user.userID!
+        }
+        service?.get(collectionID: collection) {
             tasks in
             self.allTasks = tasks
         }

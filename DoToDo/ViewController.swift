@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class ViewController: UIViewController {
     
@@ -28,7 +29,12 @@ class ViewController: UIViewController {
         //Add a document to the collection named "cities"
         var ref: DocumentReference? = nil
         
-        ref = db.collection("tasks").addDocument(data: [
+        var collection = ""
+        if let user = GIDSignIn.sharedInstance.currentUser {
+            collection = user.userID!
+        }
+        
+        ref = db.collection(collection).addDocument(data: [
             "taskdata": taskdata,
             "duedate": duedate.date,
             "completed": "false"
