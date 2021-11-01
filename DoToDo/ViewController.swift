@@ -25,18 +25,12 @@ class ViewController: UIViewController {
             taskdata = td
         }
         
-        var date: Date = Date()
-        
-        if let dt = duedate.date {
-            date = dt
-        }
-        
         //Add a document to the collection named "cities"
         var ref: DocumentReference? = nil
         
         ref = db.collection("tasks").addDocument(data: [
             "taskdata": taskdata,
-            "duedate": date,
+            "duedate": duedate.date,
             "completed": "false"
         ]) { err in
             if let err = err{

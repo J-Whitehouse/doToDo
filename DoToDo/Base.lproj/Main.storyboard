@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="TMf-xm-Vae" kind="show" id="XnM-DA-Znb"/>
+                                    <segue destination="TMf-xm-Vae" kind="show" identifier="taskDetailSegue" id="XnM-DA-Znb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,15 +70,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x29-EM-l1j">
-                                <rect key="frame" x="35" y="131" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x29-EM-l1j">
+                                <rect key="frame" x="20" y="98" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81H-Jj-TKf">
-                                <rect key="frame" x="35" y="206" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81H-Jj-TKf">
+                                <rect key="frame" x="20" y="129" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRA-gf-hy7">
+                                <rect key="frame" x="20" y="213" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchOnValueChanged:" destination="TMf-xm-Vae" eventType="valueChanged" id="zkg-ec-vvM"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0G-dL-CK5">
+                                <rect key="frame" x="20" y="177" width="89" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -87,11 +99,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Gt-rm-Qin"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Gt-rm-Qin" firstAttribute="trailing" secondItem="x29-EM-l1j" secondAttribute="trailing" constant="20" id="723-Gp-VQM"/>
+                            <constraint firstItem="x29-EM-l1j" firstAttribute="leading" secondItem="6Gt-rm-Qin" secondAttribute="leading" constant="20" id="9d6-5L-MFV"/>
+                            <constraint firstItem="6Gt-rm-Qin" firstAttribute="trailing" secondItem="81H-Jj-TKf" secondAttribute="trailing" constant="20" id="JGI-ZQ-ufl"/>
+                            <constraint firstItem="81H-Jj-TKf" firstAttribute="top" secondItem="x29-EM-l1j" secondAttribute="bottom" constant="10" id="Tv4-Ls-pkg"/>
+                            <constraint firstItem="x29-EM-l1j" firstAttribute="top" secondItem="6Gt-rm-Qin" secondAttribute="top" constant="10" id="kqM-Ne-LjJ"/>
+                            <constraint firstItem="81H-Jj-TKf" firstAttribute="leading" secondItem="6Gt-rm-Qin" secondAttribute="leading" constant="20" id="utW-qf-dA5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FOQ-Vb-KUT"/>
                     <connections>
-                        <outlet property="data" destination="x29-EM-l1j" id="mES-Z8-4Oe"/>
-                        <outlet property="dueDate" destination="81H-Jj-TKf" id="W2R-hR-xYa"/>
+                        <outlet property="lblDueDate" destination="81H-Jj-TKf" id="R0L-nh-yuC"/>
+                        <outlet property="lblTaskData" destination="x29-EM-l1j" id="nbK-eH-Z8s"/>
+                        <outlet property="switchCompleted" destination="aRA-gf-hy7" id="eDr-lS-dzX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLh-xU-gGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
